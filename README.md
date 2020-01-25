@@ -1,9 +1,5 @@
 # pt2k-hytat
 
-vcxfgdfdcgfxfdsfxfx
-
-nmbvfbjdffjjffkskjf
-
 <?php
 session_start();
 	// ob_start(ob_gzhandler);
