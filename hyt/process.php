@@ -53,8 +53,7 @@
 						                      		if (isset($_POST['addproc'])) {
 	$sql = "INSERT INTO process (proc_id, proc_name, proc_desc, prod_id) VALUES ('".$_POST["pid"]."','".$_POST["pname"]."','".$_POST["pdesc"]."','".$_POST["prodid"]."')";
 	if (mysqli_query($conn, $sql)) {
-		$message = "Record Added Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 			} else {
 			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}

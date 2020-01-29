@@ -63,8 +63,7 @@
 	$sql = "UPDATE  process SET proc_id = '".$_POST['pid']."', proc_name = '".$_POST['pname']."', proc_desc = '".$_POST['pdesc']."', prod_id = '".$_POST['prodid']."'  WHERE proc_id = '".$_POST['pid']."'";
 	if (mysqli_query($conn, $sql)) 
 	{
-		$message = "Record Updated Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 		
 			} 
 			else 

@@ -63,8 +63,7 @@
 						          if (isset($_POST['save'])) {
 	$sql = "INSERT INTO product (prod_id, prod_name, prod_type, proj_id, prod_amt) VALUES ('".$_POST['pid']."', '".$_POST['pname']."', '".$_POST['ptype']."','".$_POST['projid']."' ,'".$_POST['prodamt']."')";
 	if (mysqli_query($conn, $sql)) {
-		$message = "Record Added Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 
 			} else {
 			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);

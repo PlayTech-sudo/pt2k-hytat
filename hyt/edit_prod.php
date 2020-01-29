@@ -69,8 +69,7 @@ if (isset($_POST['addproject'])) {
 	$sql = "UPDATE  product SET prod_id = '".$_POST['pid']."', prod_name = '".$_POST['pname']."', prod_type = '".$_POST['ptype']."', proj_id = '".$_POST['projid']."',prod_amt = '".$_POST['prodamt']."'  WHERE prod_id = '".$_POST['pid']."'";
 	if (mysqli_query($conn, $sql)) 
 	{
-		$message = "Record Updated Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 
 		//header('location:addproject.php');
 			} 
