@@ -35,7 +35,7 @@
                       if(in_array('D01', $user_access)){
                     ?>
                     <li class="nav-item <?php if($title == 'Project Dashboard') echo 'active'; ?>">
-                        <a class="nav-link" href="addproject.php">
+                        <a class="nav-link" href="addpro.php">
                             <span class="sidebar-mini"> PM </span>
                             <span class="sidebar-normal">Project Management</span>
                         </a>

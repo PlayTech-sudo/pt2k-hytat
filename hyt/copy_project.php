@@ -63,8 +63,7 @@
 						          if (isset($_POST['addproject'])) {
 	$sql = "INSERT INTO project (proj_id, proj_name, proj_type, proj_start_date, proj_end_date) VALUES ('".$_POST['pid']."', '".$_POST['pname']."', '".$_POST['ptype']."','".$_POST['sdate']."','".$_POST['edate']."')";
 	if (mysqli_query($conn, $sql)) {
-		$message = "Record Added Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 
 			} else {
 			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -72,8 +71,8 @@
 
 	}
 	?>
-						                  <button class="btn btn-danger" type="button" onclick="window.location.href='addproject.php';">Back</button>
-						                    	</div>
+ <button class="btn btn-danger" type="button" onclick="window.location.href='addpro.php';">Back</button>
+				</div>
 	            	</div>
 	     				</form>
 			     		<?php

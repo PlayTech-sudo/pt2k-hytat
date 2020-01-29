@@ -52,8 +52,7 @@
 if (isset($_POST['addprod'])) {
 	$sql = "INSERT INTO project (proj_id, proj_name, proj_type, proj_start_date, proj_end_date) VALUES ('".$_POST["pid"]."','".$_POST["pname"]."','".$_POST["ptype"]."','".$_POST["sdate"]."','".$_POST["edate"]."')";
 	if (mysqli_query($conn, $sql)) {
-		$message = "Record Added Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 
 			} else {
 			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -112,8 +111,8 @@ if (isset($_POST['addprod'])) {
 												            </a>
 											            </td>
 											            <td>
-												            <a rel="tooltip" href="process/admin/usr_process.php?delrole=<?php echo $role['id']; ?>" class="btn btn-danger btn-link" title="Delete">
-												              <i class="material-icons">close</i>
+												            <a rel="tooltip" href="del_project.php?delproj=<?php echo $role['proj_id']; ?>" class="btn btn-danger btn-link" title="Delete">
+												              <i class="material-icons">delete</i>
 												            </a>
 											            </td>
 									          		</tr>

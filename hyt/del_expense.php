@@ -11,8 +11,7 @@ if(isset($_GET['delexp'])){
 	$id = $_GET['delexp'];
 	$sql = "DELETE FROM expense WHERE exp_id = '$id'";
 	if (mysqli_query($conn, $sql)) {
-		$message = "Expense Deleted Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+		 echo "<script type='text/javascript'>showNotification('top','right','Expense Deleted Successfully.', 'info');</script>";
 		header('location:expense.php');
 
 	} else {

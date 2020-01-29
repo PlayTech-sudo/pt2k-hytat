@@ -11,9 +11,8 @@ if(isset($_GET['delproj'])){
 	$id = $_GET['delproj'];
 	$sql = "DELETE FROM project WHERE proj_id = '$id'";
 	if (mysqli_query($conn, $sql)) {
-		$message = "Project Deleted Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-		header('location:addproject.php');
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
+		header('location:addpro.php');
 
 	} else {
 	 echo "Error: " . $sql . "<br>" . mysqli_error($conn);

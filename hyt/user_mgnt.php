@@ -71,7 +71,7 @@
 												              <i class="material-icons">edit</i>
 												            </a>
 												            <a rel="tooltip" href="process/admin/usr_process.php?deluser=<?php echo $user['id']; ?>" class="btn btn-danger btn-link" title="Delete">
-												              <i class="material-icons">close</i>
+												              <i class="material-icons">delete</i>
 												            </a>
 											            </td>
 									          		</tr>

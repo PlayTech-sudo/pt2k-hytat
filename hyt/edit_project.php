@@ -1,8 +1,7 @@
-
 <?php
 	session_start();	
 	// ob_start(ob_gzhandler);
-	$title = "Edit Role";
+	$title = "Edit project";
 	$acc_code = "A02";
 	require "./functions/access.php";
 	require_once "./template/header.php";
@@ -21,7 +20,7 @@
               <div class="card-icon">
                 <i class="material-icons">edit</i>
               </div>
-              <h4 class="card-title">Edit User</h4>
+              <h4 class="card-title">Edit Project</h4>
           	</div>
 					  <div class="card-body">
 				    	<?php
@@ -58,27 +57,26 @@
 						                  	
 	            	<div class="row">
 	              	<div class="col-md-12">
-						          <button class="btn btn-success" name="addproject" type="submit">Save</button>
+						          <button class="btn btn-success" name="addproject" type="submit">Update</button>
+						                 
+
 
 						          <?php
 
 if (isset($_POST['addproject'])) {
-	$sql = "INSERT INTO project (proj_id, proj_name, proj_type, proj_start_date, proj_end_date) VALUES ('".$_POST['pid']."', '".$_POST['pname']."', '".$_POST['ptype']."','".$_POST['sdate']."','".$_POST['edate']."')";
-	if (mysqli_query($conn, $sql)) {
-		$message = "Record Added Successfully";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-
-			} else {
+	$sql = "UPDATE  project SET proj_id = '".$_POST['pid']."', proj_name = '".$_POST['pname']."', proj_type = '".$_POST['ptype']."', proj_start_date = '".$_POST['sdate']."',proj_end_date = '".$_POST['edate']."'  WHERE proj_id = '".$_POST['pid']."'";
+	if (mysqli_query($conn, $sql)) 
+	{
+		 echo "<script type='text/javascript'>showNotification('top','right','Record Updated Successfully.', 'info');</script>";
+			} 
+			else 
+			{
 			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-		}
+			}
 
 	}
-						                      		?>
-
-						              
-						                  	<button class="btn btn-danger" type="button" onclick="window.location.href='addproject.php';">Back</button>
-
-						                   
+		?>
+<button class="btn btn-danger" type="button" onclick = "window.location.href = 'addpro.php';">Back</button>
 						                    	</div>
 	            	</div>
 	     				</form>
