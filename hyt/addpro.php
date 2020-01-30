@@ -55,7 +55,7 @@ if (isset($_POST['addprod'])) {
 		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 
 			} else {
-			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			    echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 		}
 
 	}
@@ -87,7 +87,7 @@ if (isset($_POST['addprod'])) {
 											            <th> Start_Date</th>
 											            <th>End_Date</th>
 											            <th> </th>
-											     	<th colspan="2" align="center">             action </th>
+											     	<th colspan="2" align="center">             Action </th>
 								          			</tr> 
 								        		</thead>
 								        		<tbody>

@@ -55,11 +55,10 @@
                                                        if (isset($_POST['addprod'])) {
 	                                                  $sql = "INSERT INTO product (prod_id, prod_name, prod_type, proj_id, prod_amt) VALUES ('".$_POST["p_id"]."','".$_POST["p_name"]."','".$_POST["p_type"]."','".$_POST["pj_id"]."','".$_POST["p_amt"]."')";
 	                                                 if (mysqli_query($conn, $sql)) {
-		                                                  $message = "Record Added Successfully";
-		                                                  echo "<script type='text/javascript'>alert('$message');</script>";
+		                                                  echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.','info');</script>";
 
 		                                               	} else {
-		 	                                                  echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
+		 	                                                  eecho "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 	                                                      	}
 
 	                                                         } ?>
@@ -90,7 +89,8 @@
 											            <th>Product Type</th>
 											            <th>Project Id</th>
 											            <th>Product amnt</th>
-											            <th colspan="2" align="center">             action </th>
+											            <th></th>
+											            <th colspan="2" align="center">             Action </th>
 											     
 								          			</tr>
 								        		</thead>

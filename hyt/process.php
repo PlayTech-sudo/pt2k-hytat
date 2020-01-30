@@ -55,7 +55,7 @@
 	if (mysqli_query($conn, $sql)) {
 		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 			} else {
-			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			    echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 		}
 
 	}
@@ -85,7 +85,8 @@
 											            <th>Process Name</th>
 											            <th>Process desc</th>
 											            <th>Product Id</th>
-											            <th colspan="2" align="center">                action </th>
+											            <th></th>
+											            <th colspan="2" align="center">                Action </th>
 											     
 								          			</tr>
 								        		</thead>
