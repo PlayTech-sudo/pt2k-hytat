@@ -58,7 +58,7 @@
 		                                                  echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.','info');</script>";
 
 		                                               	} else {
-		 	                                                  eecho "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
+		 	                                                  echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 	                                                      	}
 
 	                                                         } ?>
