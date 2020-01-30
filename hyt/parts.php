@@ -85,7 +85,7 @@
 											            <th> Type</th>
 											            <th> prod_id </th>
 											            <th> part_amt </th>
-											     	<th colspan="2" align="center">             action </th>
+											     	<th colspan="2" align="center">          Action</th>
 								          			</tr> 
 								        		</thead>
 								        		<tbody>
