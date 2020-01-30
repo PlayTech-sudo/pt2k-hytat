@@ -36,7 +36,7 @@
 				<form name="form4" action="" method="POST">
 		    		<div class="form-group bmd-form-group">
 						<label class="bmd-label-floating">Part ID</label>
-						    <input type="text" class="form-control" id="part_id" name="part_id" required=""  value="<?php echo $row['part_id']; ?>" autofocus="">
+						    <input type="text" class="form-control" id="part_id" name="part_id" required=""  value="" autofocus="">
 					</div>
 					<div class="form-group bmd-form-group">
 						<label class="bmd-label-floating">Part Name</label>
