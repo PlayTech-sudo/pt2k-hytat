@@ -111,7 +111,7 @@
 											            </td>
 											            <td>
 												            <a rel="tooltip" href="del_parts.php?del_parts=<?php echo $parts['part_id']; ?>" class="btn btn-danger btn-link" title="Delete">
-												              <i class="material-icons">close</i>
+												              <i class="material-icons">delete</i>
 												            </a>
 											            </td>
 									          		</tr>
