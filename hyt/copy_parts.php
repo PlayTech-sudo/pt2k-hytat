@@ -64,13 +64,12 @@
 									$sql = "INSERT INTO parts (part_id, part_name, part_type, prod_id, part_amt) VALUES ('".$_POST['part_id']."', '".$_POST['part_name']."', '".$_POST['part_type']."','".$_POST['prod_id']."','".$_POST['part_amt']."')";
 									if (mysqli_query($conn, $sql)) 
 									{
-										$message = "Record Added Successfully";
-										echo "<script type='text/javascript'>alert('$message');</script>";
+										echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 										//header('location:addproject.php');
 									} 
 									else 
 									{
-				    					echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				    					echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 									}
 
 								}

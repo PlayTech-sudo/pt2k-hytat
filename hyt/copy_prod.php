@@ -66,7 +66,7 @@
 		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
 
 			} else {
-			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			    echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
 		}
 
 	}
