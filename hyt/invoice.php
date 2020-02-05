@@ -2,8 +2,8 @@
 
 // OPD Invoice
 session_start();
-include '../../functions/dbconn.php';
-include '../../functions/general.php';
+include 'functions/dbconn.php';
+include 'functions/general.php';
 
 $insert = false;
 

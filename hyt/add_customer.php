@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	// ob_start(ob_gzhandler);
-	$title = "Expense Management";
+	$title = "Add Product";
 	$acc_code = "A02";
 	require "./functions/access.php";
 	require_once "./template/header.php";
@@ -13,105 +13,106 @@
 <div class="content" style="min-height: calc(100vh - 160px);">
 	<div class="container-fluid">
 		<div class="row">
-		      				<div class="col-md-3 col-sm-12">
+		  	
+		  	
+		      				<div class="col-md-4">
 						        <div class="card">
-						          	<div class="card-header card-header-rose card-header-icon">
 						              	<div class="card-icon">
 						                	<i class="material-icons">add</i>
 						              	</div>
-						              	<h4 class="card-title">Add Expense </h4>
+						              	<h4 class="card-title">Add Customer</h4>
 						          	</div>
 						          	<div class="card-body">
 						            	<form name="form4" action="" method="POST">
 						              		<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating">Expense ID</label>
-						                      	<input type="text" class="form-control" id="p_id" name="eid" required="" autofocus="">
+						                      	<label class="bmd-label-floating">Customer ID</label>
+						                      	<input type="text" class="form-control" id="p_id" name="p_id" required="" autofocus="">
 						                  	</div>
 						                  	<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating">Expense Category</label>
-						                      	<input type="text" class="form-control" id="p_name" required="" name="ecat">
-						                  	</div>
-
-						                  	<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating"> Expense Amount</label>
-						                     	<input type="text" class="form-control" id="p_type" required="" name="eamt">
-						                  	</div>
-
-						                  	<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating"> Subject</label>
-						                     	<input type="text" class="form-control" id="p_type" required="" name="sub">
+						                      	<label class="bmd-label-floating">Customer type</label>
+						                      	<input type="text" class="form-control" id="p_type" required="" name="p_type">
 						                  	</div>
 						                  	<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating">Notes</label>
-						                     	<textarea rows="4"cols="10" class="form-control" id="p_type" required="" name="enote"></textarea>
+						                      	<label class="bmd-label-floating"> Customer Name</label>
+						                     	<input type="text" class="form-control" id="p_name" required="" name="p_name">
 						                  	</div>
-
+						                  	<div class="form-group bmd-form-group">
+						                      	<label class="bmd-label-floating">Customer Address</label>
+						                      	<input type="text" class="form-control" id="pj_id" name="pj_id" required="" autofocus="">
+						                  	</div>
+						                  	<div class="form-group bmd-form-group">
+						                      	<label class="bmd-label-floating">Customer Phno</label>
+						                      	<input type="text" class="form-control" id="p_amt" name="p_amt" required="" autofocus="">
+						                  	</div>
 						                  	
 						                  	<div class="row">
 						                    	<div class="col-md-12">
-						                      		<button class="btn btn-success" name="addprod" type="submit">Add</button>
-						                      		<?php
+						                      		<div class="col-md-12">
+						                      		  <button class="btn btn-success" name="addcustomer" type="submit">Add</button>
+						                      		    <?php
 
-if (isset($_POST['addprod'])) {
-	$sql = "INSERT INTO expense (exp_id, exp_categ, exp_amt,subject,notes) VALUES ('".$_POST["eid"]."','".$_POST["ecat"]."','".$_POST["eamt"]."','".$_POST["sub"]."','".$_POST["enote"]."')";
-	if (mysqli_query($conn, $sql)) {
-		 echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.', 'info');</script>";
+                                                       if (isset($_POST['addcustomer'])) {
+	                                                  $sql = "INSERT INTO custven (cv_id, cv_type, cv_name, cv_address, cv_phno) VALUES ('".$_POST["p_id"]."','".$_POST["p_type"]."','".$_POST["p_name"]."','".$_POST["pj_id"]."','".$_POST["p_amt"]."')";
+	                                                 if (mysqli_query($conn, $sql)) {
+		                                                  echo "<script type='text/javascript'>showNotification('top','right','Record Added Successfully.','info');</script>";
 
-			} else {
-			    echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
-		}
+		                                               	} else {
+		 	                                                  echo "<script type='text/javascript'>showNotification('top','right','Duplicate Entry.','info');</script>";
+	                                                      	}
 
-	}
-						                      		?>
-						                      		<button class="btn btn-danger" type="reset">Clear</button>
+	                                                         } ?>
+						                      		  <button class="btn btn-danger" type="reset">Clear</button>
 						                    	</div>
 						                  	</div>
 						           		</form>
+						           	</div>
 						          	</div>
 						        </div>
 						    </div>
 						    
-		      				<div class="col-md-9 col-sm-12">
+		      				<div class="col-md-8 ">
 		      					<div class="card">
 								  	<div class="card-header card-header-rose card-header-icon">
 								    	<div class="card-icon">
 								      		<i class="material-icons">view_list</i>
 								    	</div>
-								    	<h4 class="card-title">Expense Details</h4>
+								    	<h4 class="card-title">customer list</h4>
 								  	</div>
 								  	<div class="card-body">
 								    	<div class="table-responsive">
 								      		<table class="table">
 								        		<thead>
 								          			<tr>
-											            <th class="text-center"> Expense ID</th>
-											            <th> Expense Category</th>
-											            <th> Expense Amount</th>
-											            <th>  Subject </th>
-											          	<th> Notes</th>
-											     	<th colspan="2" align="center"> Action </th>
-								          			</tr> 
+											            <th class="text-center">customer_ID</th>
+											            <th>Customer Type</th>
+											            <th>Customer Name</th>
+											            <th>Customer address</th>
+											            <th>Customer phno</th>
+											            <th></th>
+											            <th colspan="2" align="center">             Action </th>
+											     
+								          			</tr>
 								        		</thead>
 								        		<tbody>
 								        			<?php
-								        				$res = getData($conn, "expense");
+								        				$res = getData($conn, "custven");
 								        				foreach ($res as $role) {
 								        			?>
 									          		<tr>
-											            <td class="text-center"><?php echo $role['exp_id']; ?></td>
-											            <td><?php echo $role['exp_categ']; ?></td>
-											            <td><?php echo $role['exp_amt']; ?></td>
-											            <td><?php echo $role['subject']; ?></td>
-											            <td><?php echo $role['notes']; ?></td>
-											           
-											            <td class="text-center td-actions">
-												            <a rel="tooltip" href="edit_expense.php?editexp=<?php echo $role['exp_id']; ?>" class="btn btn-success btn-link" title="Edit">
+											            <td class="text-center"><?php echo $role['cv_id']; ?></td>
+											            <td><?php echo $role['cv_type']; ?></td>
+											            <td><?php echo $role['cv_name']; ?></td>
+											             <td><?php echo $role['cv_address']; ?></td>
+											            <td><?php echo $role['cv_phno']; ?></td>
+											             <td class="text-center td-actions">
+												            <a rel="tooltip" href="edit_customer.php?editcustomers=<?php echo $role['cv_id']; ?>" class="btn btn-success btn-link" title="Edit">
 												              <i class="material-icons">edit</i>
 												            </a>
-												        </td>
-
+												        </td><td>
+												           
+											            </td>
 											            <td>
-												            <a rel="tooltip" href="del_expense.php?delexp=<?php echo $role['exp_id']; ?>" class="btn btn-danger btn-link" title="Delete">
+												            <a rel="tooltip" href="del_customer.php?delcustomer=<?php echo $role['cv_id']; ?>" class="btn btn-danger btn-link" title="Delete">
 												              <i class="material-icons">delete</i>
 												            </a>
 											            </td>

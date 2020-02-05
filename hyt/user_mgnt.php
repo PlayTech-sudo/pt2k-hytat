@@ -165,7 +165,7 @@
 												              <i class="material-icons">edit</i>
 												            </a>
 												            <a rel="tooltip" href="process/admin/usr_process.php?delrole=<?php echo $role['id']; ?>" class="btn btn-danger btn-link" title="Delete">
-												              <i class="material-icons">close</i>
+												              <i class="material-icons">delete</i>
 												            </a>
 											            </td>
 									          		</tr>
@@ -270,12 +270,12 @@
 						                  		  <h3>Inventory</h3>
 								                  	<div class="form-group bmd-form-group">
 								                     	<div class="form-check">
-																			  <label class="form-check-label">
+																			  <!--<label class="form-check-label">
 																			    <input class="form-check-input" type="checkbox" name="code[]" value="G01">Dashboard
 																			    <span class="form-check-sign">
 																			      <span class="check"></span>
 																			    </span>
-																			  </label>
+																			  </label>-->
 																			</div>
 																			<div class="form-check">
 																			  <label class="form-check-label">
@@ -305,7 +305,7 @@
 		</div>              
 	</div>
 	<?php
-		if($_GET['msg']==1){
+		/*if($_GET['msg']==1){
 			echo "<script type='text/javascript'>showNotification('top','right','Please select atleast one section!', 'warning');</script>";
 		}
 		if($_GET['msg']==2){
@@ -331,7 +331,7 @@
 		}
 		if($_GET['msg']==9){
 			echo "<script type='text/javascript'>showNotification('top','right','Duplicate Role Name!', 'warning');</script>";
-		}
+		}*/
 	?>
 </div>
 <!-- MAIN CONTENT ENDS -->

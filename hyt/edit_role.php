@@ -32,12 +32,12 @@
 						            	<form name="form5" action="process/admin/usr_process.php" method="POST">
 						              		<div class="form-group bmd-form-group">
 						                      	<label class="bmd-label-floating">Role</label>
-						                      	<input type="text" class="form-control" name="role" required="" autofocus="">
+						                      	<input type="text" class="form-control" name="role" required="" autofocus="" value="<?php echo $row[1]; ?>">
 						                  	</div>
 						                  	<div class="form-group bmd-form-group">
 						                      	<label class="bmd-label-floating">Descripton</label>
 						                      	<!-- <input type="text" class="form-control" name="fname"> -->
-						                      	<textarea class="form-control" rows="3" required="" name="r_desc"></textarea>
+						                      	<textarea class="form-control" rows="3" required="" name="r_desc"><?php echo $row[2]; ?></textarea>
 						                  	</div>
 						                  	<div class="row">
 						                  		<div class="col-md-6 col-sm-12">
@@ -90,7 +90,7 @@
 								                  	<div class="form-group bmd-form-group">
 								                  		<div class="form-check">
 																			  <label class="form-check-label">
-																			    <input class="form-check-input" type="checkbox" name="code[]" value="A01">Admin Dashboard
+																			    <input class="form-check-input" type="checkbox" name="code[]" value="A01" <?php if(in_array("A01",$section)) { ?> checked="checked" <?php } ?> >Admin Dashboard
 																			    <span class="form-check-sign">
 																			      <span class="check"></span>
 																			    </span>
@@ -111,14 +111,14 @@
 						                  		<div class="col-md-6 col-sm-12">
 						                  		  <h3>Inventory</h3>
 								                  	<div class="form-group bmd-form-group">
-								                     	<div class="form-check">
+								                     	<!--<div class="form-check">
 																			  <label class="form-check-label">
 																			    <input class="form-check-input" type="checkbox" name="code[]" value="G01">Dashboard
 																			    <span class="form-check-sign">
 																			      <span class="check"></span>
 																			    </span>
 																			  </label>
-																			</div>
+																			</div>-->
 																			<div class="form-check">
 																			  <label class="form-check-label">
 																			    <input class="form-check-input" type="checkbox" name="code[]" value="G02">Store Management 

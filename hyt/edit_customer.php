@@ -1,9 +1,8 @@
-
 <?php
 	session_start();	
 	// ob_start(ob_gzhandler);
-	$title = "Edit Expense";
-	$acc_code = "A01";
+	$title = "Edit Customer";
+	$acc_code = "A02";
 	require "./functions/access.php";
 	require_once "./template/header.php";
 	require_once "./template/sidebar.php";
@@ -21,54 +20,54 @@
               <div class="card-icon">
                 <i class="material-icons">edit</i>
               </div>
-              <h4 class="card-title">Edit Expense</h4>
+              <h4 class="card-title">Edit Customer</h4>
           	</div>
 					  <div class="card-body">
 				    	<?php
-				    		if(isset($_GET['editexp'])) {
-				    			$idd= $_GET['editexp'];
-				    		$sql = "SELECT exp_id, exp_categ, exp_amt,subject, notes FROM expense where exp_id='$idd' ";
+				    		if(isset($_GET['editcustomers'])) {
+				    			$idd= $_GET['editcustomers'];
+				    		$sql = "SELECT * FROM custven where cv_id='$idd' ";
    								$res = mysqli_query($conn, $sql);
 								$row = mysqli_fetch_array($res);
 							?>
 						            
 							<form name="form4" action="" method="POST">
 		        		<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating">Expense ID</label>
-						                      	<input type="text" class="form-control" id="exp_id" name="eid" required=""  value="<?php echo $row['exp_id']; ?>" autofocus="">
+						                      	<label class="bmd-label-floating">Customer ID</label>
+						                      	<input type="text" class="form-control" id="p_id" name="pid" required=""  value="<?php echo $row['cv_id']; ?>" autofocus="">
 						                  	</div>
 						                  	<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating">Expense Category</label>
-						                      	<input type="text" class="form-control" id="exp_name" required="" value="<?php echo $row['exp_categ']; ?>"  name="ecat">
+						                      	<label class="bmd-label-floating">Customer Type</label>
+						                      	<input type="text" class="form-control" id="p_name" required="" value="<?php echo $row['cv_type']; ?>"  name="pname">
 						                  	</div>
 						                  	<div class="form-group bmd-form-group">
-						                      	<label class="bmd-label-floating"> Expense Amount</label>
-						                     	<input type="text" class="form-control" id="exp_cat" required="" 
-						                     	value="<?php echo $row['exp_amt']; ?>"  name="eamt">
+						                      	<label class="bmd-label-floating"> Customer Name</label>
+						                     	<input type="text" class="form-control" id="p_type" required="" 
+						                     	value="<?php echo $row['cv_name']; ?>"  name="ptype">
 						                  	</div>
 						                  
 						                  	<div class="form-group bmd-form-group">
-						                     	<label >Subject</label>
-						                     	<input type="text" class="form-control" id="exp_amt" required="" value="<?php echo $row['subject']; ?>"  name="sub">
+						                     	<label >Customer Addr</label>
+						                     	<input type="text" class="form-control" id="p_sd" required="" value="<?php echo $row['cv_address']; ?>"  name="sdate">
 						                  	</div>
 						                  	<div class="form-group bmd-form-group">
-						                      	<label >Notes</label>
-						                     	<input type="type" class="form-control" id="notes" required="" value="<?php echo $row['notes']; ?>"  name="enote">
+						                      	<label >Customer phno</label>
+						                     	<input type="text" class="form-control" id="p_ed" required="" value="<?php echo $row['cv_phno']; ?>"  name="edate">
 						                  	</div>
 						                  	
 	            	<div class="row">
 	              	<div class="col-md-12">
-						          <button class="btn btn-success" name="addexpense" type="submit">Update</button>
+						          <button class="btn btn-success" name="addcustomer" type="submit">Update</button>
+						                 
+
 
 						          <?php
 
-if (isset($_POST['addexpense'])) {
-	$sql = "UPDATE  expense SET exp_id = '".$_POST['eid']."', exp_categ = '".$_POST['ecat']."', exp_amt = '".$_POST['eamt']."', subject = '".$_POST['sub']."', notes = '".$_POST['enote']."'  WHERE exp_id = '".$_POST['eid']."'";
+if (isset($_POST['addcustomer'])) {
+	$sql = "UPDATE  custven SET cv_id = '".$_POST['pid']."', cv_type = '".$_POST['pname']."', cv_name = '".$_POST['ptype']."', cv_address = '".$_POST['sdate']."',cv_phno = '".$_POST['edate']."'  WHERE cv_id = '".$_POST['pid']."'";
 	if (mysqli_query($conn, $sql)) 
 	{
 		 echo "<script type='text/javascript'>showNotification('top','right','Record Updated Successfully.', 'info');</script>";
-
-		//header('location:addproject.php');
 			} 
 			else 
 			{
@@ -77,9 +76,7 @@ if (isset($_POST['addexpense'])) {
 
 	}
 		?>
-
-		<button class="btn btn-danger" type="button" onclick="window.location.href='admin_panel.php';">Back</button>
-				
+<button class="btn btn-danger" type="button" onclick = "window.location.href = 'add_customer.php';">Back</button>
 						                    	</div>
 	            	</div>
 	     				</form>

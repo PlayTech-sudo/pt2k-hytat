@@ -147,12 +147,12 @@
                     <?php
                       if(in_array('G01', $user_access)){
                     ?>
-                    <li class="nav-item <?php if($title == 'Inventory Dashboard') echo 'active'; ?>">
+                    <!--<li class="nav-item <?php //if($title == 'Inventory Dashboard') echo 'active'; ?>">
                         <a class="nav-link" href="inve_panel.php">
                             <span class="sidebar-mini"> DS </span>
                             <span class="sidebar-normal"> Dashboard</span>
                         </a>
-                    </li>
+                    </li>-->
                     <?php
                       }
                     ?>
@@ -160,7 +160,7 @@
                       if(in_array('G02', $user_access)){
                     ?>
                     <li class="nav-item <?php if($title == 'Store Management') echo 'active'; ?>">
-                        <a class="nav-link" href="store_mgnt.php">
+                        <a class="nav-link" href="inventory.php">
                             <span class="sidebar-mini"> SS </span>
                             <span class="sidebar-normal">Store Management</span>
                         </a>
